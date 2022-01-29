@@ -9,7 +9,7 @@
 
 public class SumDifferently {
     public static void main(String[] args) {
-        System.out.println(add(2, 11));
+        System.out.println(add(248, 19)); //output 2517
     }
     public static int add(int num1,int num2){
         String str1=String.valueOf(num1);
