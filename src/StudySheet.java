@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StudySheet {
@@ -66,5 +67,9 @@ public class StudySheet {
         String strX="563000655734469485";
         String[] chunks=new String[(int)Math.floor((double)strX.length()/4)];
         System.out.println(chunks.length);
+
+        ArrayList<String> carsList = new ArrayList<>();
+        ArrayList<Integer> numbersList = new ArrayList<>();
+        Integer[] array = numbersList.toArray(new Integer[0]);
     }
 }
