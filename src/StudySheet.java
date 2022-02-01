@@ -90,5 +90,9 @@ public class StudySheet {
         int sum2 = IntStream.range(0, digits2.length).map(i -> (int) Math.pow(digits2[i], i + 5)).sum();
             System.out.println(sum2);
 
+        //
+        int[] args2={45,7,89,3,-5,4,-88};
+        int result3= IntStream.of(args2).min().getAsInt();
+        System.out.println(result3);
     }
 }
