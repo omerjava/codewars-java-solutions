@@ -23,7 +23,7 @@ import java.math.BigInteger;
         System.out.println(isGreenNumber(BigInteger.valueOf(11)));
         System.out.println(isGreenNumber(BigInteger.valueOf(11)));
         System.out.println(isGreenNumber(BigInteger.valueOf(154353451)));
-        //System.out.println(get(50));
+        System.out.println(get(10));
     }
 
     public static BigInteger get(int n) {
@@ -35,7 +35,7 @@ import java.math.BigInteger;
                     greenNumbers[j] = BigInteger.valueOf(i);
                     j++;
                 }
-                if (j==49) {break;}
+                if (j==n-1) {break;}
                 i++;
 
         }
