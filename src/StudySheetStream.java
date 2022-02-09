@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 
 public class StudySheetStream {
@@ -18,6 +19,20 @@ public class StudySheetStream {
         System.out.println(result2);
         Arrays.sort(numbers);
         System.out.println(numbers[0]);
+
+        String[] words=new String[]{"hello", "my", "name", "", "is", "Omer"};
+        String[] filtered= Stream.of(words).filter(v->v.length()!=0).toArray(String[]::new);
+        System.out.println(Arrays.toString(filtered));
+
+        String[] array = {"a", "b", "c", "d", "e"};
+
+        //Arrays.stream  https://mkyong.com/java8/java-how-to-convert-array-to-stream/
+        Stream<String> stream1 = Arrays.stream(array);
+        stream1.forEach(System.out::println);
+
+        //Stream.of
+        Stream<String> stream2 = Stream.of(array);
+        stream2.forEach(x -> System.out.println(x));
 
     }
 }
