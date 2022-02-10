@@ -14,7 +14,7 @@
         https://www.codewars.com/kata/56786a687e9a88d1cf00005d/train/java
         */
 
-       import java.util.HashMap;
+import java.util.HashMap;
 
 public class CountCharacter {
     public static void main(String[] args) {

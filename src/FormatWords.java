@@ -30,12 +30,10 @@ public class FormatWords {
         if(filtered.length==0) return "";
         String result="";
         for(int i=0; i< filtered.length; i++){
-            if(filtered[i].length()!=0) {
                 if (filtered.length == 1) result = filtered[0];
                 else if (filtered[i] == filtered[filtered.length - 1]) result += filtered[i];
                 else if (filtered[i] == filtered[filtered.length - 2]) result += filtered[i] + " and ";
                 else result += filtered[i] + ", ";
-            }
         }
         return result;
     }

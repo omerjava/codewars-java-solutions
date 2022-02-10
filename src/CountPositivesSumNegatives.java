@@ -14,15 +14,20 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public class CountPositivesSumNegatives {
+        public class CountPositivesSumNegatives {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(
-                refactored(new int[]{0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14})));
         System.out.println(Arrays.toString(
                 countPositivesSumNegatives(new int[]{0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14})));
         System.out.println(Arrays.toString(
                 countPositivesSumNegatives(new int[]{})));
+        System.out.println(Arrays.toString(
+                refactored(new int[]{0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14})));
+        System.out.println(Arrays.toString(
+                refactored2(new int[]{0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14})));
+        System.out.println(Arrays.toString(
+                refactored3(new int[]{0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14})));
     }
     public static int[] countPositivesSumNegatives(int[] input) {
         if (input==null || input.length==0) return new int[]{};
@@ -44,4 +49,18 @@ public class CountPositivesSumNegatives {
             return new int[]{countPositives, sumOfNegatives};
         }
     }
+    public static int[] refactored2(int[] input) {
+        if (input==null || input.length==0) return new int[]{};
+        else {
+            int countPositives = IntStream.of(input).boxed().filter(v -> v > 0).toList().size();
+            int sumOfNegatives = IntStream.of(input).boxed().filter(v -> v < 0).reduce(0, Integer::sum);
+            return new int[]{countPositives, sumOfNegatives};
+        }
+    }
+    public static int[] refactored3(int[] input) {
+        if (input==null || input.length==0) return new int[]{};
+        else return new int[]{IntStream.of(input).boxed().filter(v -> v > 0).toList().size(),
+                    IntStream.of(input).boxed().filter(v -> v < 0).reduce(0, Integer::sum)};
+    }
+
 }
